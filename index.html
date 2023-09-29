@@ -19,7 +19,9 @@
 <body>
   
   <div id="app" class="container">
-    
+    <div class="logo">
+      <img src="img/toDo.png" alt="">
+    </div>
 
     <div class="new-task">
       <input @keyup.enter="addTask()" v-model.trim="newTask.text" type="text" placeholder="Nuova task">
