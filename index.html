@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script src="https://kit.fontawesome.com/66b933bf5d.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app" class="container">
+    <div class="logo">
+      <img src="img/Google__G__Logo.svg.webp" alt="">
+    </div>
+
+    <div class="new-task">
+      <input @keyup.enter="addTask()" v-model.trim="newTask" type="text" placeholder="Nuova task">
+      <button @click="addTask()">Aggiungi</button>
+      <p v-if="isError" class="error">Il nuovo task deve avere almeno 5 caratteri</p>
+    </div>
+
+    <div class="task-container">
+      <ul v-if="tasks.length > 0">
+        <li v-for="(task, index) in tasks">
+          <span>{{task}}</span>
+          <i @click="removeTask(index)" class="fa-regular fa-trash-can"></i>
+        </li>
+      </ul>
+      <h3 v-else>Non ci sono task</h3>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
