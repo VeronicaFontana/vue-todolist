@@ -5,11 +5,24 @@ createApp({
   data(){
     return{
       tasks:[
-        "Fare la spesa",
-        "Studiare Vue",
-        "Comprare la pappa dei gatti"
+        {
+          text: "Fare la spesa",
+          isDone: false
+        },
+        {
+          text: "Studiare Vue",
+          isDone: false
+        },
+        {
+          text: "Comprare la pappa dei gatti",
+          isDone: false
+        }
       ],
-      newTask:"",
+      newTask:
+      {
+        text: "",
+        isDone: false
+      },
       isError: false
     }
   },
@@ -18,8 +31,8 @@ createApp({
       if(this.newTask.length < 5){
         this.isError = true;
       }else{
-        this.tasks.unshift(this.newTask); 
-        this.newTask = "";
+        this.tasks.unshift(this.newTask);
+        this.newTask = ""
         this.isError = false;
       }
     },
