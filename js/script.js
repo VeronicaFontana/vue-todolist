@@ -38,6 +38,11 @@ createApp({
     },
     removeTask(index){
       this.tasks.splice(index, 1)
+    },
+    textCrossed(){
+      this.isDone = true;
+      console.log(this.isDone)
+      console.log("premuto")
     }
   }
 }).mount("#app")
