@@ -37,7 +37,11 @@ createApp({
       }
     },
     removeTask(index){
-      this.tasks.splice(index, 1)
+      if(this.isDone){
+        this.tasks.splice(index, 1)
+      }else{
+        console.log("completa prima la task")
+      }
     }
   }
 }).mount("#app")
