@@ -30,7 +30,7 @@
     <div class="task-container">
       <ul v-if="tasks.length > 0">
         <li v-for="(task, index) in tasks">
-          <span @click="textCrossed()" :class="{'textStriked': (task.isDone)}">{{task.text}}</span>
+          <span :class="{'textStriked': (task.isDone)}" @click="task.isDone = !(task.isDone)">{{task.text}}</span>
           <i @click="removeTask(index)" class="fa-regular fa-trash-can"></i>
         </li>
       </ul>
