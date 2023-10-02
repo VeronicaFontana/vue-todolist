@@ -37,7 +37,7 @@ createApp({
       }
     },
     removeTask(index){
-      if(this.isDone){
+      if(this.tasks[index].isDone){
         this.tasks.splice(index, 1)
       }else{
         console.log("completa prima la task")
