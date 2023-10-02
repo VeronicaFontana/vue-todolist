@@ -23,7 +23,8 @@ createApp({
         text: "",
         isDone: false
       },
-      isError: false
+      isError: false,
+      isNotDone: false
     }
   },
   methods:{
@@ -38,9 +39,11 @@ createApp({
     },
     removeTask(index){
       if(this.tasks[index].isDone){
+        this.isNotDone = false;
         this.tasks.splice(index, 1)
       }else{
         console.log("completa prima la task")
+        this.isNotDone = true;
       }
     }
   }

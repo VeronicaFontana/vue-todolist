@@ -27,6 +27,7 @@
       <input @keyup.enter="addTask()" v-model.trim="newTask.text" type="text" placeholder="Nuova task">
       <button @click="addTask()">Aggiungi</button>
       <p v-if="isError" class="error">Il nuovo task deve avere almeno 5 caratteri</p>
+      <p v-if="isNotDone" class="error">Prima devi completare la task!</p>
     </div>
 
     <div class="task-container">
